@@ -14,6 +14,16 @@ const errorMiddleware = (error, req, res, next) => {
             error = new ErrorHandler(message, 400)
         }
 
+        // if (error.name = 'jsonWebTokenError') {
+        //     const message = `JsonWebToken is invalid ,Try again`
+        //     error = new ErrorHandler(message, 400)
+        // }
+
+        // if (error.name = 'TokenExpiredError') {
+        //     const message = `JsonWebToken is expired ,Try again`
+        //     error = new ErrorHandler(message, 400)
+        // }
+
         console.log(error)
         const statusCode = error.statusCode ? error.statusCode : 500;
         res.status(statusCode)
