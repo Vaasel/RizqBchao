@@ -14,6 +14,11 @@ function userController() {
             try {
 
                 let { email, name, password } = req.body;
+                const existingUser = await Users.findOne({ email });
+
+                if (existingUser) {
+                return next(new ErrorHandler("Duplicate email Entered", 400));
+                }
 
 
                 const user = new Users({

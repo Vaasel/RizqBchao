@@ -1,5 +1,8 @@
 const express = require("express");
-require("dotenv").config({ path: "./config/.env" });
+const cors = require('cors');
+
+// require("dotenv").config({ path: "./config/.env" });
+require('dotenv').config();
 const app = express();
 const userRouter = require("./routes/userRoutes");
 const cookieParser = require("cookie-parser");
@@ -9,23 +12,28 @@ const errorMiddleware = require("./middlewares/errorMiddleware")
 require("./db/conn.js")();
 
 //middlewares
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({
     extended: true
-}))
-app.use(cookieParser())
+}));
+app.use(cookieParser());
+app.use(cors()); // Enable CORS for all routes
 
 
 //Routes
-app.use("/", userRouter)
-
-
+app.use("/api/user", userRouter);
+app.get('/api',(req,res)=>{
+    res.send("api is working");
+});
+app.get("/", (req, res) => {
+    res.send("app is working");
+});
 
 const server = app.listen(process.env.PORT || 5000)
 
 
 process.on("uncaughtException", (error) => {
-    console.log(error.message);
+    console.log(error);
     console.log("shutting down the server due to exception")
     throw Error("i have an error")
     server.close(() => {
@@ -47,6 +55,3 @@ process.on("unhandledRejection", (error) => {
 })
 
 app.use(errorMiddleware);
-
-
-
