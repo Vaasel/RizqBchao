@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Card, Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Card, Container, Form, Button } from 'react-bootstrap';
 
 function Login() {
   const [email, setEmail] = useState('');
