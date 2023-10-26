@@ -4,6 +4,7 @@ const Doner= ()=>{
     return(
         <>
             Idiot
+            Idiot
         </>
     )
 }
