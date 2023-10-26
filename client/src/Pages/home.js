@@ -1,11 +1,13 @@
-
+import Intro from '../layout/intro';
+import Volunteer from '../layout/volunteer';
+import Working from '../layout/working';
 
 const Home = () => {
   return (
     <>
-      idiot
-      idiot
-      idot
+      <Intro/>
+      <Volunteer/>
+      <Working/>
     </>
   );
 };
