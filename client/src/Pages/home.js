@@ -6,10 +6,10 @@ import Doner from '../layout/doner';
 const Home = () => {
   return (
     <>
-      <Intro/>
-      <Volunteer/>
-      <Working/>
-      <Doner/>
+      <Intro />
+      <Doner />
+      <Volunteer />
+      <Working />
     </>
   );
 };
