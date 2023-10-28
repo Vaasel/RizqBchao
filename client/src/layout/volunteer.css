@@ -1,31 +1,16 @@
-.back{
-    margin: 1rem 0;
-    background-color: #333333;
-}
-
-.vol{
-    padding: 1rem 0;
-    background-image: url("../assets/volBackground.png");
-    background-size: auto;
+.vol-h{
     display: flex;
     flex-direction: column;
-    opacity: 0.75;
-    justify-content: center;
+    text-align: center;
 }
 .vol-1{
-    margin-left: 5rem ;
     display: flex;
-    opacity: 1 !important;
-    padding: 5rem;
-    max-width: 35vw;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-around;
+    margin: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.card-vol{
     text-align: justify;
-    
-}
-.vol-h{
-    color: #ffffff;
-}
-.vol-p{
-    color: #ffffff;
+    width: 20vw;
 }
