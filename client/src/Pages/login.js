@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <div className="login">
-      <Card className="card-l">
+      <Card>
         <Card.Body>
           <Card.Title className="login-t">
             <h1>Login</h1>
