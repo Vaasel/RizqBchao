@@ -6,7 +6,7 @@
 }
 .reward-1{
     display: flex;
-    padding: 3rem 5rem;
+    padding: 3rem 3rem;
     align-items: top;
 }
 .reward-1-1{
@@ -14,10 +14,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    padding: 5rem;
+    padding: 0 4rem;
     text-align: justify;
 }
 .reward-1-2{
     width: 40vw;
-    height: 50vh;
+    height: 35vh;
 }
