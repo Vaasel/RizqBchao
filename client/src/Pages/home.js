@@ -7,6 +7,8 @@ import Rewards from '../layout/rewards';
 import Testimonial from '../layout/testimonial';
 import Stats from '../layout/stats';
 import Volunteer from '../layout/volunteer';
+import Footer from "../components/footer";
+
 
 const Home = () => {
   return (
@@ -19,6 +21,7 @@ const Home = () => {
       <Volunteer   />
       <Stats       />
       <Testimonial />
+      <Footer      />
     </>
   );
 };

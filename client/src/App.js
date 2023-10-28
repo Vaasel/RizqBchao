@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/header';
-import Footer from "./components/footer";
 import Home from './Pages/home';
 import Login from './Pages/login'; // Import your Login component
 import Signup from './Pages/signup'; // Import your Signup component
@@ -17,7 +16,6 @@ function App() {
           <Route path="/login" element={<Login />} /> {/* Login page */}
           <Route path="/signup" element={<Signup />} /> {/* Signup page */}
         </Routes>
-        <Footer />
       </Router>
     </div>
   );
