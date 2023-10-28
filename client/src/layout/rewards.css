@@ -4,3 +4,20 @@
     align-items: center;
     margin-top: 4rem;
 }
+.reward-1{
+    display: flex;
+    padding: 3rem 5rem;
+    align-items: top;
+}
+.reward-1-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 5rem;
+    text-align: justify;
+}
+.reward-1-2{
+    width: 40vw;
+    height: 50vh;
+}
