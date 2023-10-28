@@ -1,0 +1,16 @@
+.vol-h{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.vol-1{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.card-vol{
+    text-align: justify;
+    width: 20vw;
+}

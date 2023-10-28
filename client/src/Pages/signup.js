@@ -1,6 +1,8 @@
+import './signup.css';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Card, Container, Form, Button } from 'react-bootstrap';
+import { Card,Form } from 'react-bootstrap';
+import Button from '../components/button';
 
 function Signup() {
   const [name, setName] = useState('');
@@ -28,28 +30,44 @@ function Signup() {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <Card style={{ width: '18rem' }}>
+    <div className="signup">
+      <Card className="card-su">
         <Card.Body>
-          <Card.Title>Sign Up</Card.Title>
+          <Card.Title className="login-t">
+            <h1>Sign Up</h1>
+          </Card.Title>
           <Form>
-            <Form.Group>
-              <Form.Label>Name:</Form.Label>
-              <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <Form.Group className="set">
+              <Form.Control
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Email:</Form.Label>
-              <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Form.Group className="set">
+              <Form.Control
+                type="email"
+                value={email}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Password:</Form.Label>
-              <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Form.Group className="set">
+              <Form.Control
+                type="password"
+                value={password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </Form.Group>
-            <Button variant="primary" onClick={handleSignup}>Sign Up</Button>
+            <div className="Sign-b">
+              <Button text={["Sign Up"]} onClick={handleSignup} />
+            </div>
           </Form>
         </Card.Body>
       </Card>
-    </Container>
+    </div>
   );
 }
 

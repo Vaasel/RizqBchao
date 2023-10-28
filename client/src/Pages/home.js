@@ -1,24 +1,27 @@
-import Card from "react-bootstrap/Card";
-
-
-const a = [1,2,3,4,5,6]
+import './home.css';
+import Intro from '../layout/intro';
+import Help from '../layout/help';
+import Working from '../layout/working';
+import Doner from '../layout/doner';
+import Rewards from '../layout/rewards';
+import Testimonial from '../layout/testimonial';
+import Stats from '../layout/stats';
+import Volunteer from '../layout/volunteer';
+import Footer from "../components/footer";
 
 
 const Home = () => {
   return (
     <>
-      Idiot
-      {a.map((item) => (
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              array wala item number yeh he {item}.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      ))}
+      <Intro       />
+      <Doner       />
+      <Help        />
+      <Working     />
+      <Rewards     />
+      <Volunteer   />
+      <Stats       />
+      <Testimonial />
+      <Footer      />
     </>
   );
 };
