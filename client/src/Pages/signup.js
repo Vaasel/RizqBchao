@@ -62,7 +62,7 @@ function Signup() {
               />
             </Form.Group>
             <div className="Sign-b">
-              <Button text={["Sign Up"]} onClick={handleSignup} />
+              <Button text={["Sign Up"]} onClick={()=>handleSignup()} />
             </div>
           </Form>
         </Card.Body>

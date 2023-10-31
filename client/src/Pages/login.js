@@ -52,7 +52,7 @@ function Login() {
               />
             </Form.Group>
             <div className="login-b">
-              <Button text={["Login"]} onClick={handleLogin} />
+              <Button text={["Login"]} onClick={()=>handleLogin()} />
             </div>
           </Form>
         </Card.Body>
