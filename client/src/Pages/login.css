@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 62.5vh;
 }
 .login-t{
     color: #E385A7;
