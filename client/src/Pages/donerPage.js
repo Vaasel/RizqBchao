@@ -28,10 +28,29 @@ const DonerPage = ()=>{
         <div className="doner-1-3">
           <Button text={["Donate Now"]} />
         </div>
-        <div>
+        <div className="doner-1-4">
+          <h3>
+            <b>A Solvable Problem</b>
+          </h3>
+          <p>
+            Many people in our communities are struggling with hunger and food
+            insecurity, yet a significant amount of food goes to waste each day.
+            This is a solvable problem, and excess food distributing system is
+            dedicated to making a difference. Service organizations and
+            charities want access to excess food, but there are barriers in the
+            way - locating the excess food, establishing their credentials, and
+            efficiently deploying resources to transport the food to those in
+            need. That's where excess food distributing system comes in - we
+            break down these barriers and make it easy for food donors to
+            connect with legitimate charities and food banks to get excess food
+            to those who need it the most. By working together, we can reduce
+            food waste, help feed our communities, and build a more equitable
+            and sustainable food system.
+          </p>
+        </div>
+        <div className="doner-1-5">
             
         </div>
-        <div>Idiot</div>
       </div>
     );
 }
