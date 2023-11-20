@@ -1,5 +1,8 @@
 import './donerPage.css';
 import donerStart from '../assets/doner-start.png';
+import Img1 from '../assets/doner-pr-1.png';
+import Img2 from "../assets/doner-pr-2.png";
+import Img3 from '../assets/doner-pr-3.png'
 
 import Button from '../components/button';
 
@@ -49,7 +52,9 @@ const DonerPage = ()=>{
           </p>
         </div>
         <div className="doner-1-5">
-            
+          <img src={Img1} alt=""></img>
+          <img src={Img2} alt=""></img>
+          <img src={Img3} alt=""></img>
         </div>
       </div>
     );
