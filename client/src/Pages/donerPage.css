@@ -1,0 +1,24 @@
+.doner-1-1:img{
+    max-width: 100vw;
+}
+.doner-1-3{
+    display: flex;
+    justify-content: center;
+}
+.doner-1-2{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    padding: 0 4rem;
+    color: #495057;
+}
+.doner-1-2 h4{
+    color: #868E96;
+    padding: 1rem;
+}
+.doner-1-2 h3 {
+    padding-bottom: 1rem;
+}

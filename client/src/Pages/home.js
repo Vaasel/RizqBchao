@@ -8,7 +8,6 @@ import Testimonial from '../layout/testimonial';
 import Stats from '../layout/stats';
 import Volunteer from '../layout/volunteer';
 
-
 const Home = () => {
   return (
     <>
