@@ -13,7 +13,7 @@ function userController() {
         async registerUser(req, res, next) {
             try {
 
-                let { email, name, password } = req.body;
+                let { email, name, password, phone, city,address,zip } = req.body;
                 const existingUser = await Users.findOne({ email });
 
                 if (existingUser) {
@@ -25,6 +25,10 @@ function userController() {
                     name,
                     email,
                     password,
+                    phone,
+                    city,
+                    address,
+                    zip
 
                 });
 
