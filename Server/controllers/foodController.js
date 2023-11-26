@@ -1,4 +1,4 @@
-const Food = require("../models/FoodModel");
+const Food = require("../models/foodModel");
 const ErrorHandler = require("../utils/ErrorHandler");
 const multer = require("multer");
 
