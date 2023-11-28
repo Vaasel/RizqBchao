@@ -29,11 +29,7 @@ const DonerPage = ()=>{
           </p>
         </div>
         <div className="doner-1-3">
-          <Button text={["Donate Now"]}
-          onClick={
-            
-          }
-           />
+          <Button text={["Donate Now","/donation"]} />
         </div>
         <div className="doner-1-4">
           <h3>
