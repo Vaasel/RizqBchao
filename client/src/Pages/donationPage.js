@@ -1,8 +1,7 @@
 import "./donationPage.css";
 import donation from '../assets/donation.png';
 import React, { useState } from "react";
-import { Card, Form } from "react-bootstrap";
-import Button from "../components/button";
+import { Form } from "react-bootstrap";
 
 const Donation =()=>{
 
@@ -14,15 +13,14 @@ const Donation =()=>{
     return (
       <>
         <div className="Donate-1">
-          <div className="Donate-1-1">
-            <img src={donation} alt="DonationImage"></img>
-          </div>
           <div>
-            <Card>
-              <Card.Body>
-                <Card.Title>
-                  <h1>Sign Up</h1>
-                </Card.Title>
+            <img
+              className="Donate-1-1"
+              src={donation}
+              alt="DonationImage"
+            ></img>
+          </div>
+          <div className="Donate-1-2">
                 <Form>
                   <Form.Group>
                     <Form.Control
@@ -49,11 +47,8 @@ const Donation =()=>{
                     />
                   </Form.Group>
                   <div>
-                    <Button text={["Sign Up"]} />
                   </div>
                 </Form>
-              </Card.Body>
-            </Card>
           </div>
         </div>
       </>

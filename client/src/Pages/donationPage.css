@@ -1,7 +1,14 @@
 .Donate-1{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 0.5rem;
 }
 .Donate-1-1{
-    max-height: 40vw;
+    max-width: 40vw;
+}
+.Donate-1-2{
+    display: flex;
+    margin-right: 15vw;
+    align-items: center;
+    justify-content: center;
 }
