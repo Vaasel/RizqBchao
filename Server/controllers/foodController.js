@@ -9,14 +9,13 @@ function foodController() {
     return {
         async createFood(req, res, next) {
             try {
-                const { userId, pickup, food, quantity, prefTime, location } = req.body;
+                const { userId, pickup, food, quantity, prefTime } = req.body;
                 const newFood = new Food({
                     userId,
                     pickup,
                     food,
                     quantity,
                     prefTime,
-                    location,
                 });
 
                 // Check if an image is uploaded

@@ -9,8 +9,12 @@ import Button from '../components/button';
 const DonerPage = ()=>{
     return (
       <div>
-        <div className="doner-1-1">
-          <img src={donerStart} alt="Doner-Background"></img>
+        <div>
+          <img
+            className="doner-1-1"
+            src={donerStart}
+            alt="Doner-Background"
+          ></img>
         </div>
         <div className="doner-1-2">
           <h1>
@@ -29,11 +33,7 @@ const DonerPage = ()=>{
           </p>
         </div>
         <div className="doner-1-3">
-          <Button text={["Donate Now"]}
-          onClick={
-            
-          }
-           />
+          <Button text={["Donate Now", "/donation"]} />
         </div>
         <div className="doner-1-4">
           <h3>
