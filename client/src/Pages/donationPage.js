@@ -36,7 +36,6 @@ const Donation =()=>{
       }
     };
 
-
     return (
       <>
         <div className="Donate-1">
@@ -49,45 +48,50 @@ const Donation =()=>{
           </div>
           <div className="Donate-1-2">
             <Form>
-              <Form.Group>
-                <Form.Label>Pickup where?</Form.Label>
+              <Form.Group className="form-group">
+                <Form.Label className="form-label">Pickup where?</Form.Label>
                 <Form.Control
+                  className="form-feild"
                   type="text"
                   placeholder="e.g; .... Town"
                   value={pickup}
                   onChange={(e) => setPickup(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group>
-                <Form.Label>Food Item</Form.Label>
+              <Form.Group className="form-group">
+                <Form.Label className="form-label">Food Item</Form.Label>
                 <Form.Control
+                  className="form-feild"
                   type="text"
                   value={food}
                   placeholder="e.g; Pasta"
                   onChange={(e) => setFood(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group>
-                <Form.Label>Preferred Time</Form.Label>
+              <Form.Group className="form-group">
+                <Form.Label className="form-label">Preferred Time</Form.Label>
                 <Form.Control
+                  className="form-feild"
                   type="time"
                   value={prefTime}
                   placeholder="12:00 PM"
                   onChange={(e) => setPrefTime(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group>
-                <Form.Label>Quantity</Form.Label>
+              <Form.Group className="form-group">
+                <Form.Label className="form-label">Quantity (KG) </Form.Label>
                 <Form.Control
+                  className="form-feild"
                   type="number"
                   value={quantity}
                   placeholder="0"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group>
-                <Form.Label>Small file input example</Form.Label>
+              <Form.Group className="form-group">
+                <Form.Label className="form-label">Upload Image</Form.Label>
                 <Form.Control
+                  className="form-feild"
                   type="file"
                   onChange={(e) => {
                     const [file] = e.target.files;
@@ -95,10 +99,12 @@ const Donation =()=>{
                   }}
                 />
               </Form.Group>
-              <div>
-                <button onClick={createDonation}>Done</button>
-              </div>
             </Form>
+            <div>
+              <button className="form-button" onClick={createDonation}>
+                Done
+              </button>
+            </div>
           </div>
         </div>
       </>
