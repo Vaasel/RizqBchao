@@ -193,6 +193,15 @@ function userController() {
             }
 
         },
+        async getAllVolunteers(req, res, next) {
+            try {
+                let user = await Users.find({ role: 'volunteer' });
+                return res.status(200).json({ success: true, user })
+            } catch (error) {
+                next(error)
+            }
+
+        },
 
         //fetches data of single user based on id
         async getSingleUser(req, res, next) {
