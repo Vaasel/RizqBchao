@@ -38,3 +38,31 @@
 .doner-1-5 img{
     width: 25vw;
 }
+
+@media only screen and (max-width: 425px) {
+    .doner-1-2{
+        padding: 0;
+        text-align: justify;
+    }
+    .doner-1-2 h3{
+        text-align: center;
+    }
+    .doner-1-4{
+        padding: 0;
+    }
+    .doner-1-4 p{
+        text-align: justify;
+        max-height: 8rem;
+        overflow-y: scroll;
+    }
+    .doner-1-5{
+        padding: 0;
+        flex-direction: column;
+        margin: 0 1rem;
+        align-items: center;
+    }
+    .doner-1-5 img{
+        padding: 1rem;
+        width: 15rem;
+    }
+}

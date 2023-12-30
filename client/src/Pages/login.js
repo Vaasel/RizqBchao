@@ -8,16 +8,18 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/user/login', {
         email,
         password,
       });
-
       if (response.status === 200) {
+        localStorage.setItem("token", response.data.token);
         // Login successful, you can redirect or perform other actions here.
         console.log('Login successful');
+        console.log(response)
       } else {
         // Handle login failure, e.g., display an error message.
         console.error('Login failed');
@@ -29,7 +31,7 @@ function Login() {
 
   return (
     <div className="login">
-      <Card>
+      <Card className="login-c">
         <Card.Body>
           <Card.Title className="login-t">
             <h1>Login</h1>
@@ -52,7 +54,9 @@ function Login() {
               />
             </Form.Group>
             <div className="login-b">
-              <Button text={["Login"]} onClick={()=>handleLogin()} />
+              <button className="btn" onClick={handleLogin}>
+                Login
+              </button>
             </div>
           </Form>
         </Card.Body>

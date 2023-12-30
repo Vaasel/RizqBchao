@@ -2,24 +2,28 @@ import './signup.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card,Form } from 'react-bootstrap';
-import Button from '../components/button';
 
 function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignup = async () => {
+  const handleSignup = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/user/register', {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/user/register",
+        {
+          name: name,
+          email: email,
+          password: password,
+        }
+      );
 
       if (response.status === 200) {
-        // Registration successful, you can redirect or perform other actions here.
+        localStorage.setItem("token", response.data.token)
         console.log('Registration successful');
+        console.log(response)
       } else {
         // Handle registration failure, e.g., display an error message.
         console.error('Registration failed');
@@ -31,7 +35,7 @@ function Signup() {
 
   return (
     <div className="signup">
-      <Card className="card-su">
+      <Card className="sign-c">
         <Card.Body>
           <Card.Title className="login-t">
             <h1>Sign Up</h1>
@@ -62,7 +66,9 @@ function Signup() {
               />
             </Form.Group>
             <div className="Sign-b">
-              <Button text={["Sign Up"]} onClick={()=>handleSignup()} />
+              <button className="btn" onClick={handleSignup}>
+                Sign Up
+              </button>
             </div>
           </Form>
         </Card.Body>

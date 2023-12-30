@@ -39,14 +39,37 @@
     filter: brightness(0) invert(1);
 }
 
-
-
-
-
-
 .para{
     margin-top: 1rem;
     color: #FFFFFF;
     text-align: justify;
     text-justify: inter-word;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .footer{
+        padding: 1rem 2rem 0 2rem;
+    }
+    .footer-1{
+        justify-content: space-between;
+    }
+    .footer-1-1{
+        width: 80%;
+    }
+
+    .footer-1-1 p{
+        max-height: 10rem;
+        overflow-y: scroll;
+    }
+
+    .footer-1-2 h5{
+        display: none;
+    }
+    .footer-1-2-1{
+        flex-direction: column;
+    }
+    .icons{
+        width: 2rem;
+    }
 }

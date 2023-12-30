@@ -19,3 +19,24 @@
     max-width: 55vw;
     max-height: 45vh;
 }
+
+@media only screen and (max-width: 425px) {
+    .Intro{
+        flex-direction: column-reverse;
+        margin: 0.5rem 1rem;
+        align-items: center;
+    }
+    .Intro-1{
+        max-width: 20rem;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+    }
+    .Intro-pic{
+        max-width: 40rem;
+        max-height: 25rem;
+    }
+    .Intro-para{
+        text-align: justify;
+    }
+}
