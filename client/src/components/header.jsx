@@ -10,17 +10,17 @@ const Header = ()=>{
         <>
             <Navbar expand="lg" className="bg-body-tertiary header" sticky="top" >
                 <Navbar.Brand  href="/">
-                    <img src={companyLogo}  width="200" height="65" alt="EFDS"/> 
+                    <img className='headerImg' src={companyLogo}  width="200" height="65" alt="EFDS"/> 
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto Header-Size">
                         <div className='bar'>
-                        <Nav.Link href="/doner">Donate</Nav.Link>
-                        <Nav.Link href="#link">Get Involve</Nav.Link>
-                        <Nav.Link href="#link">Forum</Nav.Link>
-                        <Nav.Link href="/signup">Sign up</Nav.Link>
-                        <Nav.Link href="/login"><div className='button'><h>Sign In</h></div></Nav.Link>
+                        <Nav.Link className='bar-h' href="/doner">Donate</Nav.Link>
+                        <Nav.Link className='bar-h' href="/accepter">Get Involved</Nav.Link>
+                        <Nav.Link className='bar-h' href="/volunteer">Volunteer</Nav.Link>
+                        <Nav.Link className='bar-h' href="/signup">Sign up</Nav.Link>
+                        <Nav.Link className="headerBtn" href="/login"><div className='button'><h>Sign In</h></div></Nav.Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

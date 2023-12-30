@@ -21,3 +21,10 @@
     padding: 0 0.5rem;
     width: 25vw;
 }
+
+@media only screen and (max-width: 425px) {
+    .test-pic {
+    padding-top: 1rem;
+    width  : 25rem !important;
+    }
+}

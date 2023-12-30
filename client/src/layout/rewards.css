@@ -21,3 +21,22 @@
     width: 40vw;
     height: 35vh;
 }
+@media only screen and (max-width: 425px) {
+    .reward-t{
+        padding: 0 0.5rem;
+    }
+    .reward-1{
+        padding: 1rem;
+    }
+    .reward-1-1{
+        padding: 1rem;
+        align-items: center;
+    }
+    .reward-1-1 p{
+        height: 10rem;
+        overflow-y: scroll;
+    }
+    .reward-1-2{
+        display: none;
+    }
+}

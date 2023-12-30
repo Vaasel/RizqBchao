@@ -43,3 +43,19 @@
     border: none;
     color: #9A9A9A;
 }
+
+@media only screen and (max-width: 425px) {
+    .Donate-1{
+        justify-content: center;
+    }
+    .Donate-1-1{
+        display: none;
+    }
+    .Donate-1-2{
+        margin-right: 0;
+    }
+    .form-button{
+        width: 10rem;
+        height: 4rem;
+    }
+}

@@ -17,15 +17,23 @@
     display: flex;
     opacity: 1 !important;
     padding: 5rem;
-    max-width: 35vw;
+    max-width: 60vw;
     flex-direction: column;
     align-items: flex-start;
-    text-align: justify;
-    
 }
 .help-h{
     color: #ffffff;
 }
 .help-p{
     color: #ffffff;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 425px) {
+    .help-1{
+        padding: 2rem;
+        margin-left: 1rem;
+        max-width: 30rem;
+        align-items: center;
+    }
 }

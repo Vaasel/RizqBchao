@@ -15,7 +15,7 @@ const Donation =()=>{
     const createDonation = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/food/create",
+          "http://localhost:5000/api/food/create", pic,
           {
             pickup,
             food,
@@ -40,11 +40,7 @@ const Donation =()=>{
       <>
         <div className="Donate-1">
           <div>
-            <img
-              className="Donate-1-1"
-              src={donation}
-              alt="DonationImage"
-            ></img>
+            <img className="Donate-1-1" src={donation} alt="DonationImage"/>
           </div>
           <div className="Donate-1-2">
             <Form>

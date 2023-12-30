@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 62.5vh;
+    min-height: 62vh;
 }
 .login-t{
     color: #E385A7;
@@ -17,4 +17,10 @@
 }
 .set{
     padding: 0.5rem 1rem;
+}
+
+@media only screen and (max-width: 425px) {
+    .login-c{
+        width: 20rem;
+    }
 }

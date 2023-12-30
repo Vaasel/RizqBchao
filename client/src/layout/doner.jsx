@@ -60,7 +60,7 @@ const Doner= ()=>{
                         </Card.Body>
                     </Card>
                 </div>
-                <div className='doner'>
+                <div className='doner del-1'>
                     <Card className='card-d'>
                         <Card.Img variant="top" src={doner4} />
                         <Card.Body>
