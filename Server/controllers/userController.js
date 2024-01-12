@@ -7,7 +7,37 @@ const crypto = require("crypto");
 
 function userController() {
     return {
-
+        async updateUser(req, res, next) {
+            try {
+                const { userId } = req.params; // Assuming you have the userId as a parameter in your route
+                const { name, phone, city, address, zip } = req.body;
+        
+                // Find the user by ID
+                const user = await Users.findById(userId);
+        
+                if (!user) {
+                    return next(new ErrorHandler("User not found", 404));
+                }
+        
+                // Update user properties
+                if (name) user.name = name;
+                // if (password) user.password = password;
+                if (phone) user.phone = phone;
+                if (city) user.city = city;
+                if (address) user.address = address;
+                if (zip) user.zip = zip;
+        
+                // Save the updated user
+                await user.save();
+        
+                // Optionally, you can generate a new JWT token if needed
+                jwtToken(user, res, 200);
+        
+            } catch (error) {
+                next(error);
+            }
+        },
+        
 
 
         async registerUser(req, res, next) {
