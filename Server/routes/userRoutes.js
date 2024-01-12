@@ -5,6 +5,7 @@ const { isAuthenticated, isAdmin } = require("../middlewares/auth");
 
 userRouter.get("/resetPassword/:token", userController().resetPassword);
 userRouter.get("/logout", isAuthenticated, userController().logoutUser);
+userRouter.get("/getFoods", isAuthenticated, userController().getUserFood);
 userRouter.put("/update/:userId", isAuthenticated, userController().updateUser);
 userRouter.post("/register", userController().registerUser);
 userRouter.post("/login", userController().loginUser);

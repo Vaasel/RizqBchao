@@ -9,7 +9,7 @@ function userController() {
     return {
         async updateUser(req, res, next) {
             try {
-                const { userId } = req.params; // Assuming you have the userId as a parameter in your route
+                const { userId } = req.user._id; // Assuming you have the userId as a parameter in your route
                 const { name, phone, city, address, zip } = req.body;
         
                 // Find the user by ID
@@ -38,7 +38,22 @@ function userController() {
             }
         },
         
-
+        async getUserFood(req, res, next) {
+            try {
+                const userId = req.user._id; // Assuming you have the userId as a parameter in your route
+        
+                // Find the food items for the specified user
+                const userFoods = await Food.find({ userId });
+                if (!userFoods || userFoods.length === 0) {
+                    return res.status(404).json({ success: false, message: "No food items found for the user" });
+                }
+        
+                res.status(200).json({success: true, message: userFoods});
+        
+            } catch (error) {
+                next(error);
+            }
+        },
 
         async registerUser(req, res, next) {
             try {
