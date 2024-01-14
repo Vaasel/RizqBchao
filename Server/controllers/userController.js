@@ -58,7 +58,7 @@ function userController() {
         async registerUser(req, res, next) {
             try {
 
-                let { email, name, password, phone, city,address,zip } = req.body;
+                let { email, name, password, phone, city, address, zip, role } = req.body;
                 const existingUser = await Users.findOne({ email });
 
                 if (existingUser) {
@@ -73,8 +73,8 @@ function userController() {
                     phone,
                     city,
                     address,
-                    zip
-
+                    zip,
+                    role
                 });
 
                 await user.save();

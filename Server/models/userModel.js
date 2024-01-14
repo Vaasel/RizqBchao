@@ -47,7 +47,7 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: "Donor"
+        default: "donor"
     }
 }, { timestamps: true });
 
