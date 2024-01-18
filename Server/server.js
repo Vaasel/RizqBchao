@@ -3,6 +3,7 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const userRouter = require("./routes/userRoutes");
 const foodRouter = require("./routes/foodRoutes"); // Import foodRoutes
+const badgeRouter = require("./routes/badgeRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 require('dotenv').config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors()); // Enable CORS for all routes
 //Routes
 app.use("/api/user", userRouter);
 app.use("/api/food", foodRouter); // Use foodRoutes
+app.use("/api/badge", badgeRouter);
 app.get('/api', (req, res) => {
     res.send("api is working");
 });
