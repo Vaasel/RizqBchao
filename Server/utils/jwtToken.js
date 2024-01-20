@@ -7,7 +7,7 @@ const jwtToken = (user, res, status) => {
     }
 
 
-    res.status(status).cookie('jwt', token, options).json({ success: true, token, id})
+    res.status(status).cookie('jwt', token, options).json({ success: true, token, user})
 }
 
 module.exports = jwtToken;
