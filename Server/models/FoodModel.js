@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const toBase64 = require('../utils/toBase64')
 
 const foodSchema = new mongoose.Schema({
     userId: {
@@ -33,6 +34,22 @@ const foodSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    available:{
+        type: Boolean,
+        default: true,
+    },
+    stars:{
+        type: Number,
+        default: 0, 
+        max:5,
+        min:0
+    }
 }, { timestamps: true });
+foodSchema.virtual('imageBase64').get(function () {
+    if (this.image && this.image.data && this.image.contentType) {
+        return `data:${this.image.contentType};base64,${this.image.data.toString('base64')}`;
+    }
+    return null;
+});
 
 module.exports = mongoose.model('Food', foodSchema);

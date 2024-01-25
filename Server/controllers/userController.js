@@ -7,13 +7,58 @@ const crypto = require("crypto");
 
 function userController() {
     return {
-
-
+        async updateUser(req, res, next) {
+            try {
+                const { userId } = req.user._id; // Assuming you have the userId as a parameter in your route
+                const { name, phone, city, address, zip } = req.body;
+        
+                // Find the user by ID
+                const user = await Users.findById(userId);
+        
+                if (!user) {
+                    return next(new ErrorHandler("User not found", 404));
+                }
+        
+                // Update user properties
+                if (name) user.name = name;
+                // if (password) user.password = password;
+                if (phone) user.phone = phone;
+                if (city) user.city = city;
+                if (address) user.address = address;
+                if (zip) user.zip = zip;
+        
+                // Save the updated user
+                await user.save();
+        
+                // Optionally, you can generate a new JWT token if needed
+                jwtToken(user, res, 200);
+        
+            } catch (error) {
+                next(error);
+            }
+        },
+        
+        async getUserFood(req, res, next) {
+            try {
+                const userId = req.user._id; // Assuming you have the userId as a parameter in your route
+        
+                // Find the food items for the specified user
+                const userFoods = await Food.find({ userId });
+                if (!userFoods || userFoods.length === 0) {
+                    return res.status(404).json({ success: false, message: "No food items found for the user" });
+                }
+        
+                res.status(200).json({success: true, message: userFoods});
+        
+            } catch (error) {
+                next(error);
+            }
+        },
 
         async registerUser(req, res, next) {
             try {
 
-                let { email, name, password, phone, city,address,zip } = req.body;
+                let { email, name, password, phone, city, address, zip, role } = req.body;
                 const existingUser = await Users.findOne({ email });
 
                 if (existingUser) {
@@ -28,8 +73,8 @@ function userController() {
                     phone,
                     city,
                     address,
-                    zip
-
+                    zip,
+                    role
                 });
 
                 await user.save();
@@ -187,6 +232,15 @@ function userController() {
         async getAllUsers(req, res, next) {
             try {
                 let user = await Users.find({});
+                return res.status(200).json({ success: true, user })
+            } catch (error) {
+                next(error)
+            }
+
+        },
+        async getAllVolunteers(req, res, next) {
+            try {
+                let user = await Users.find({ role: 'volunteer' });
                 return res.status(200).json({ success: true, user })
             } catch (error) {
                 next(error)
