@@ -1,10 +1,11 @@
-import './header.css';
+import './headerUser.css'
+import './header.css'
+
 import companyLogo from '../assets/brand-name.jpg';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-const Header = ()=>{
-    
+const HeaderUser = ()=>{
     return(
         <>
             <Navbar expand="lg" className="bg-body-tertiary header" sticky="top" >
@@ -18,8 +19,8 @@ const Header = ()=>{
                         <Nav.Link className='bar-h' href="/doner">Donate</Nav.Link>
                         <Nav.Link className='bar-h' href="/accepter">Get Involved</Nav.Link>
                         <Nav.Link className='bar-h' href="/volunteer">Volunteer</Nav.Link>
-                        <Nav.Link className='bar-h' href="/signup">Sign up</Nav.Link>
-                        <Nav.Link className="headerBtn" href="/login"><div className='button'><h>Sign In</h></div></Nav.Link>
+                        <Nav.Link  href="/dashboard"><img className='bar-i' src="https://cdn-icons-png.freepik.com/256/3237/3237472.png" alt="pic"/></Nav.Link>
+                        <Nav.Link className='bar-b' href="/donation">Donate</Nav.Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
@@ -28,4 +29,4 @@ const Header = ()=>{
     );
 };
 
-export default Header;
+export default HeaderUser;
