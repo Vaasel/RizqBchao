@@ -22,13 +22,18 @@ class ChatRequest(BaseModel):
 async def chat(request:ChatRequest):
     prompt = f"ingredients>> {request.chat}; recipe>>"
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
-    output = model.generate(input_ids, max_length=20)
+    output = model.generate(input_ids, max_length=512)
     result = tokenizer.decode(output[0])
     while("<|endoftext|>" not in result):
         input_ids = tokenizer.encode(result, return_tensors="pt")
-        output = model.generate(input_ids, max_length=124)
+        output = model.generate(input_ids, max_length=1024)
         result = tokenizer.decode(output[0])
-    return {"result": result}
+    ingredients_text, recipe_text = result.split(';')
+
+# Extracting ingredients and recipe content
+    ingredients = ingredients_text.split('>>')[1].strip().split(', ')
+    recipe = recipe_text.split('>>')[1].strip()
+    return {"ingredients": ingredients,"recipe":recipe}
 
 
 if __name__ == "__main__":
