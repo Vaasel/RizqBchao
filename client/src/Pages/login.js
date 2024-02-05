@@ -2,8 +2,10 @@ import './login.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Card, Form} from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,8 +19,10 @@ function Login() {
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         // Login successful, you can redirect or perform other actions here.
-        console.log('Login successful');
-        console.log(response)
+        console.log("Login successful");
+        console.log(localStorage.getItem("token"));
+        // Execute this code wherever you want to trigger a page reload
+        navigate("/");
       } else {
         // Handle login failure, e.g., display an error message.
         console.error('Login failed');
