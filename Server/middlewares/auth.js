@@ -3,7 +3,17 @@ const jwt = require("jsonwebtoken");
 const Users = require("../models/userModel");
 
 async function fetchTokenId(req, res, next) {
-    const { jwt: token } = req.cookies;
+    const authHeader = req.header("Authorization");
+    if (!authHeader) {
+      return next(new ErrorHandler("Please login first", 401));
+    }
+
+    // Check if the Authorization header has the correct format
+    const authHeaderParts = authHeader.split(" ");
+    if (authHeaderParts.length !== 2 || authHeaderParts[0] !== "Bearer") {
+      return next(new ErrorHandler("Please login first", 401));
+    }
+    const token  = authHeaderParts[1];
     if (!token) {
         return next(new ErrorHandler("Please login first", 401));
     }
